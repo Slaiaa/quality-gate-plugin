@@ -1,0 +1,40 @@
+{
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/auto-format.sh",
+            "timeout": 15,
+            "statusMessage": "Auto-formatting..."
+          }
+        ]
+      },
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "if": "Edit(*.ts)|Edit(*.tsx)|Write(*.ts)|Write(*.tsx)",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/typecheck.sh",
+            "timeout": 30,
+            "statusMessage": "Type-checking..."
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "${CLAUDE_PLUGIN_ROOT}/bin/stop-guard.sh",
+            "timeout": 5
+          }
+        ]
+      }
+    ]
+  }
+}

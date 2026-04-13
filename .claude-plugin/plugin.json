@@ -1,0 +1,13 @@
+{
+  "name": "quality-gate",
+  "description": "Auto-format, typecheck, and validate before commits. Eliminates reactive fix-commits across any project.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Christian Skaiaa",
+    "email": "christian@skaiaa.org"
+  },
+  "repository": "https://github.com/Slaiaa/quality-gate-plugin",
+  "license": "MIT",
+  "keywords": ["quality", "formatting", "typecheck", "validation", "hooks"],
+  "category": "productivity"
+}
