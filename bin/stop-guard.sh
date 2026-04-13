@@ -11,7 +11,7 @@ if command -v git &>/dev/null && git rev-parse --is-inside-work-tree &>/dev/null
   DIRTY=$(git diff --name-only 2>/dev/null | head -5)
   if [[ -n "$DIRTY" ]]; then
     cat <<EOF
-{"hookSpecificOutput":{"hookEventName":"Stop","additionalContext":"Auto-format changed these files since last edit. Consider staging them:\n$(echo "$DIRTY" | tr '\n' ' ')"}}
+{"continue":true,"systemMessage":"Auto-format changed these files since last edit. Consider staging them: $(echo "$DIRTY" | tr '\n' ' ')"}
 EOF
     exit 0
   fi
