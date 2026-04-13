@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "quality-gate-plugin",
+  "description": "Auto-format, typecheck, and validate before commits",
+  "owner": {
+    "name": "Christian Skaiaa",
+    "email": "christian@skaiaa.org"
+  },
+  "plugins": [
+    {
+      "name": "quality-gate",
+      "description": "Auto-format, typecheck, and validate before commits. Eliminates reactive fix-commits across any project.",
+      "category": "productivity",
+      "source": "./"
+    }
+  ]
+}
